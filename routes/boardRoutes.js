@@ -9,5 +9,6 @@ const protect = require("../middleware/authMiddleware");
 // Protected routes
 router.post("/", protect, createBoard);
 router.get("/", protect, getUserBoards);
+router.post("/boards", protect, createBoard);
 
 module.exports = router;

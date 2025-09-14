@@ -4,7 +4,13 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "http://localhost:3000", // 👈 frontend URL
+    credentials: true, // 👈 this is key for cookies/tokens
+  })
+);
 app.use(express.json()); // ✅ Needed for JSON body parsing
 
 // Routes
